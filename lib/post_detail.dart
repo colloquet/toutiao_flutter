@@ -507,8 +507,7 @@ class _PostDetailState extends State<PostDetail> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48),
-                        child: Text('好用，产品，也是新的体验',
-                            style: TextStyle(fontSize: 16)),
+                        child: Text('太好用了', style: TextStyle(fontSize: 16)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48, top: 8),
@@ -583,8 +582,7 @@ class _PostDetailState extends State<PostDetail> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48),
-                        child: Text('好用，产品，也是新的体验',
-                            style: TextStyle(fontSize: 16)),
+                        child: Text('怎么可以这么好用', style: TextStyle(fontSize: 16)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48, top: 8),
@@ -659,8 +657,7 @@ class _PostDetailState extends State<PostDetail> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48),
-                        child: Text('好用，产品，也是新的体验',
-                            style: TextStyle(fontSize: 16)),
+                        child: Text('也太好用了吧', style: TextStyle(fontSize: 16)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48, top: 8),
@@ -735,8 +732,7 @@ class _PostDetailState extends State<PostDetail> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48),
-                        child: Text('好用，产品，也是新的体验',
-                            style: TextStyle(fontSize: 16)),
+                        child: Text('好用的一批', style: TextStyle(fontSize: 16)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48, top: 8),
@@ -811,8 +807,7 @@ class _PostDetailState extends State<PostDetail> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48),
-                        child: Text('好用，产品，也是新的体验',
-                            style: TextStyle(fontSize: 16)),
+                        child: Text('好用到爆炸', style: TextStyle(fontSize: 16)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 48, top: 8),
