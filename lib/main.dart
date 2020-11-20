@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:toutiao_flutter/feed_list.dart';
+import 'package:toutiao_flutter/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,12 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
         '放映厅',
       ),
     ),
-    Text(
-      'Index 2: School',
-    ),
+    Profile(),
   ];
 
   void _onItemTapped(int index) {
+    HapticFeedback.lightImpact();
     setState(() {
       _selectedIndex = index;
     });
@@ -77,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: _selectedIndex == 3 ? Color(0xfff8f8f8) : Colors.white,
         appBar: _selectedIndex == 3
             ? AppBar(
+                brightness: Brightness.light,
                 leading: Icon(
                   Icons.qr_code_outlined,
                   color: Colors.black,
@@ -145,37 +147,43 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Color(0xffe54a43),
                 bottom: PreferredSize(
                   preferredSize: Size.fromHeight(40),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border:
-                          Border(bottom: BorderSide(color: Color(0xfff3f3f3))),
-                    ),
-                    height: 40,
-                    child: TabBar(
-                      unselectedLabelColor: Colors.black,
-                      labelColor: Color(0xffe54a43),
-                      unselectedLabelStyle:
-                          TextStyle(fontWeight: FontWeight.normal),
-                      labelStyle: TextStyle(
-                          fontWeight: FontWeight.normal, fontSize: 16),
-                      labelPadding:
-                          EdgeInsets.symmetric(vertical: 0, horizontal: 8),
-                      isScrollable: true,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      tabs: [
-                        Tab(text: '关注'),
-                        Tab(text: '推荐'),
-                        Tab(text: '热榜'),
-                        Tab(text: '上海'),
-                        Tab(text: '国际'),
-                        Tab(text: '科技'),
-                        Tab(text: '娱乐'),
-                        Tab(text: '要闻'),
-                        Tab(text: '游戏'),
-                        Tab(text: '数码'),
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border(
+                                bottom: BorderSide(color: Color(0xfff3f3f3))),
+                          ),
+                          height: 40,
+                          child: TabBar(
+                            unselectedLabelColor: Colors.black,
+                            labelColor: Color(0xffe54a43),
+                            unselectedLabelStyle:
+                                TextStyle(fontWeight: FontWeight.normal),
+                            labelStyle: TextStyle(
+                                fontWeight: FontWeight.normal, fontSize: 14),
+                            labelPadding: EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 8),
+                            isScrollable: true,
+                            indicatorSize: TabBarIndicatorSize.label,
+                            tabs: [
+                              Tab(text: '关注'),
+                              Tab(text: '推荐'),
+                              Tab(text: '热榜'),
+                              Tab(text: '上海'),
+                              Tab(text: '国际'),
+                              Tab(text: '科技'),
+                              Tab(text: '娱乐'),
+                              Tab(text: '要闻'),
+                              Tab(text: '游戏'),
+                              Tab(text: '数码'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -185,13 +193,14 @@ class _MyHomePageState extends State<MyHomePage> {
           selectedFontSize: 12,
           onTap: _onItemTapped,
           currentIndex: _selectedIndex,
+          selectedItemColor: Color(0xfff04142),
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: '头条',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.play_arrow_outlined, size: 32),
+              icon: Icon(Icons.play_arrow_outlined),
               label: '西瓜视频',
             ),
             BottomNavigationBarItem(
