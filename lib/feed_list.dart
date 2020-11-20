@@ -18,8 +18,9 @@ class Feed extends StatelessWidget {
     final postTypes = [Post(), PostAlt(), PostAlt2()];
 
     return ListView.separated(
-      separatorBuilder: (BuildContext context, int index) =>
-          Container(height: 6.0, color: Color(0xfff2f2f2)),
+      separatorBuilder: (BuildContext context, int index) => story
+          ? Container(height: 6.0, color: Color(0xfff2f2f2))
+          : Divider(height: 1, indent: 16, endIndent: 16),
       itemCount: 100,
       itemBuilder: (BuildContext context, int index) {
         if (story && index == 0) {
