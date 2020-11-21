@@ -363,7 +363,8 @@ class _PostDetailState extends State<PostDetail> {
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   height: 46,
                   decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(color: borderColor)),
+                    border: Border(
+                        bottom: BorderSide(color: borderColor, width: 0.5)),
                   ),
                   child: Row(
                     children: [
@@ -905,7 +906,7 @@ class _PostDetailState extends State<PostDetail> {
               ),
               decoration: BoxDecoration(
                 color: Theme.of(context).backgroundColor,
-                border: Border(top: BorderSide(color: borderColor)),
+                border: Border(top: BorderSide(color: borderColor, width: 0.5)),
               ),
               child: Row(
                 children: [
