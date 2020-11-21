@@ -28,24 +28,43 @@ class _PostDetailState extends State<PostDetail> {
 
   @override
   Widget build(BuildContext context) {
+    Color borderColor =
+        MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Color(0xff212121)
+            : Color(0xffcccccc);
+    Color dividerColor =
+        MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Colors.black
+            : Color(0xfff2f2f2);
+    Color replyBackgroundColor =
+        MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Color(0xff282828)
+            : Color(0xfff2f2f2);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: Colors.white,
+        brightness: MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Brightness.dark
+            : Brightness.light,
+        backgroundColor: Theme.of(context).backgroundColor,
         elevation: 0.5,
         titleSpacing: 0,
         iconTheme: IconThemeData(
-          color: Colors.black, //change your color here
+          color: Theme.of(context)
+              .textTheme
+              .bodyText1
+              .color, //change your color here
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
-            child: Icon(Icons.search, color: Colors.black),
+            child: Icon(Icons.search,
+                color: Theme.of(context).textTheme.bodyText1.color),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
-            child: Icon(Icons.more_horiz, color: Colors.black),
+            child: Icon(Icons.more_horiz,
+                color: Theme.of(context).textTheme.bodyText1.color),
           ),
         ],
         title: AnimatedOpacity(
@@ -75,13 +94,13 @@ class _PostDetailState extends State<PostDetail> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                   Text(
                     '197 万粉丝',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                       fontWeight: FontWeight.w300,
                       fontSize: 12,
                     ),
@@ -155,7 +174,7 @@ class _PostDetailState extends State<PostDetail> {
                       SizedBox(height: 8),
                       Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffcccccc)),
+                          border: Border.all(color: borderColor, width: 0.5),
                         ),
                         child: Column(
                           children: [
@@ -210,7 +229,10 @@ class _PostDetailState extends State<PostDetail> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         height: 1.5,
-                                        color: Colors.black,
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1
+                                            .color,
                                       ),
                                       children: [
                                         TextSpan(
@@ -335,14 +357,13 @@ class _PostDetailState extends State<PostDetail> {
                 ),
                 Container(
                   height: 6,
-                  color: Color(0xfff2f2f2),
+                  color: dividerColor,
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   height: 46,
                   decoration: BoxDecoration(
-                    border:
-                        Border(bottom: BorderSide(color: Color(0xfff3f3f3))),
+                    border: Border(bottom: BorderSide(color: borderColor)),
                   ),
                   child: Row(
                     children: [
@@ -409,9 +430,8 @@ class _PostDetailState extends State<PostDetail> {
                               border: Border.all(color: Color(0xffeeeeee)),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                  'assets/images/bytedance-logo.jpg'),
+                              borderRadius: BorderRadius.circular(24),
+                              child: Image.asset('assets/images/avatar.png'),
                             ),
                           ),
                           SizedBox(width: 12),
@@ -424,6 +444,8 @@ class _PostDetailState extends State<PostDetail> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 size: 16,
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
                               )
                             ],
                           ),
@@ -442,7 +464,7 @@ class _PostDetailState extends State<PostDetail> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xfff2f2f2),
+                                color: replyBackgroundColor,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16)),
                               ),
@@ -460,7 +482,9 @@ class _PostDetailState extends State<PostDetail> {
                             ),
                             Spacer(),
                             Icon(Icons.clear,
-                                color: Color(0xffdddddd), size: 18),
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
+                                size: 18),
                           ],
                         ),
                       ),
@@ -485,9 +509,8 @@ class _PostDetailState extends State<PostDetail> {
                               border: Border.all(color: Color(0xffeeeeee)),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                  'assets/images/bytedance-logo.jpg'),
+                              borderRadius: BorderRadius.circular(24),
+                              child: Image.asset('assets/images/avatar.png'),
                             ),
                           ),
                           SizedBox(width: 12),
@@ -500,6 +523,8 @@ class _PostDetailState extends State<PostDetail> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 size: 16,
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
                               )
                             ],
                           ),
@@ -517,7 +542,7 @@ class _PostDetailState extends State<PostDetail> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xfff2f2f2),
+                                color: replyBackgroundColor,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16)),
                               ),
@@ -535,7 +560,9 @@ class _PostDetailState extends State<PostDetail> {
                             ),
                             Spacer(),
                             Icon(Icons.clear,
-                                color: Color(0xffdddddd), size: 18),
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
+                                size: 18),
                           ],
                         ),
                       ),
@@ -560,9 +587,8 @@ class _PostDetailState extends State<PostDetail> {
                               border: Border.all(color: Color(0xffeeeeee)),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                  'assets/images/bytedance-logo.jpg'),
+                              borderRadius: BorderRadius.circular(24),
+                              child: Image.asset('assets/images/avatar.png'),
                             ),
                           ),
                           SizedBox(width: 12),
@@ -575,6 +601,8 @@ class _PostDetailState extends State<PostDetail> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 size: 16,
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
                               )
                             ],
                           ),
@@ -592,7 +620,7 @@ class _PostDetailState extends State<PostDetail> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xfff2f2f2),
+                                color: replyBackgroundColor,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16)),
                               ),
@@ -610,7 +638,9 @@ class _PostDetailState extends State<PostDetail> {
                             ),
                             Spacer(),
                             Icon(Icons.clear,
-                                color: Color(0xffdddddd), size: 18),
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
+                                size: 18),
                           ],
                         ),
                       ),
@@ -635,9 +665,8 @@ class _PostDetailState extends State<PostDetail> {
                               border: Border.all(color: Color(0xffeeeeee)),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                  'assets/images/bytedance-logo.jpg'),
+                              borderRadius: BorderRadius.circular(24),
+                              child: Image.asset('assets/images/avatar.png'),
                             ),
                           ),
                           SizedBox(width: 12),
@@ -650,6 +679,8 @@ class _PostDetailState extends State<PostDetail> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 size: 16,
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
                               )
                             ],
                           ),
@@ -667,7 +698,7 @@ class _PostDetailState extends State<PostDetail> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xfff2f2f2),
+                                color: replyBackgroundColor,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16)),
                               ),
@@ -685,7 +716,9 @@ class _PostDetailState extends State<PostDetail> {
                             ),
                             Spacer(),
                             Icon(Icons.clear,
-                                color: Color(0xffdddddd), size: 18),
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
+                                size: 18),
                           ],
                         ),
                       ),
@@ -710,9 +743,8 @@ class _PostDetailState extends State<PostDetail> {
                               border: Border.all(color: Color(0xffeeeeee)),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                  'assets/images/bytedance-logo.jpg'),
+                              borderRadius: BorderRadius.circular(24),
+                              child: Image.asset('assets/images/avatar.png'),
                             ),
                           ),
                           SizedBox(width: 12),
@@ -725,6 +757,8 @@ class _PostDetailState extends State<PostDetail> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 size: 16,
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
                               )
                             ],
                           ),
@@ -742,7 +776,7 @@ class _PostDetailState extends State<PostDetail> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xfff2f2f2),
+                                color: replyBackgroundColor,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16)),
                               ),
@@ -760,7 +794,9 @@ class _PostDetailState extends State<PostDetail> {
                             ),
                             Spacer(),
                             Icon(Icons.clear,
-                                color: Color(0xffdddddd), size: 18),
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
+                                size: 18),
                           ],
                         ),
                       ),
@@ -785,9 +821,8 @@ class _PostDetailState extends State<PostDetail> {
                               border: Border.all(color: Color(0xffeeeeee)),
                             ),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                  'assets/images/bytedance-logo.jpg'),
+                              borderRadius: BorderRadius.circular(24),
+                              child: Image.asset('assets/images/avatar.png'),
                             ),
                           ),
                           SizedBox(width: 12),
@@ -800,6 +835,8 @@ class _PostDetailState extends State<PostDetail> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 size: 16,
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
                               )
                             ],
                           ),
@@ -817,7 +854,7 @@ class _PostDetailState extends State<PostDetail> {
                               padding: EdgeInsets.symmetric(
                                   vertical: 4, horizontal: 8),
                               decoration: BoxDecoration(
-                                color: Color(0xfff2f2f2),
+                                color: replyBackgroundColor,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16)),
                               ),
@@ -835,7 +872,9 @@ class _PostDetailState extends State<PostDetail> {
                             ),
                             Spacer(),
                             Icon(Icons.clear,
-                                color: Color(0xffdddddd), size: 18),
+                                color:
+                                    Theme.of(context).textTheme.bodyText1.color,
+                                size: 18),
                           ],
                         ),
                       ),
@@ -859,13 +898,14 @@ class _PostDetailState extends State<PostDetail> {
             left: 0,
             child: Container(
               padding: EdgeInsets.only(
-                  top: 6,
-                  right: 4,
-                  bottom: 6 + MediaQuery.of(context).padding.bottom,
-                  left: 16),
+                top: 6,
+                right: 4,
+                bottom: 6 + MediaQuery.of(context).padding.bottom,
+                left: 16,
+              ),
               decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border(top: BorderSide(color: Color(0xfff3f3f3))),
+                color: Theme.of(context).backgroundColor,
+                border: Border(top: BorderSide(color: borderColor)),
               ),
               child: Row(
                 children: [
@@ -873,7 +913,7 @@ class _PostDetailState extends State<PostDetail> {
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                       decoration: BoxDecoration(
-                        color: Color(0xfff2f2f2),
+                        color: replyBackgroundColor,
                         borderRadius: BorderRadius.all(Radius.circular(16)),
                       ),
                       child: Row(
@@ -881,6 +921,7 @@ class _PostDetailState extends State<PostDetail> {
                           Icon(
                             Icons.edit,
                             size: 20,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                           SizedBox(width: 8),
                           Text(
@@ -899,7 +940,11 @@ class _PostDetailState extends State<PostDetail> {
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Stack(
                           children: [
-                            Icon(Icons.comment_outlined),
+                            Icon(
+                              Icons.comment_outlined,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
+                            ),
                             Positioned(
                               top: 0,
                               right: 0,
@@ -921,15 +966,24 @@ class _PostDetailState extends State<PostDetail> {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
-                        child: Icon(Icons.star_outline),
+                        child: Icon(
+                          Icons.star_outline,
+                          color: Theme.of(context).textTheme.bodyText1.color,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
-                        child: Icon(Icons.thumb_up_outlined),
+                        child: Icon(
+                          Icons.thumb_up_outlined,
+                          color: Theme.of(context).textTheme.bodyText1.color,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
-                        child: Icon(Icons.share),
+                        child: Icon(
+                          Icons.share,
+                          color: Theme.of(context).textTheme.bodyText1.color,
+                        ),
                       ),
                     ],
                   ),

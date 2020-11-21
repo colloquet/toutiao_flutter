@@ -7,6 +7,10 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color cardBackgroundColor =
+        MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Color(0xff282828)
+            : Colors.white;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -21,6 +25,10 @@ class Profile extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Color(0xff000000),
                     borderRadius: BorderRadius.all(Radius.circular(24)),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(24),
+                    child: Image.asset('assets/images/avatar.png'),
                   ),
                 ),
                 SizedBox(width: 16),
@@ -107,7 +115,7 @@ class Profile extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: cardBackgroundColor,
               borderRadius: BorderRadius.all(Radius.circular(4)),
             ),
             child: Padding(
@@ -121,7 +129,7 @@ class Profile extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.notifications_outlined,
-                          color: Color(0xffe54a43),
+                          color: Theme.of(context).accentColor,
                           size: 28,
                         ),
                         SizedBox(height: 4),
@@ -138,7 +146,7 @@ class Profile extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.star_outline,
-                          color: Color(0xffe54a43),
+                          color: Theme.of(context).accentColor,
                           size: 28,
                         ),
                         SizedBox(height: 4),
@@ -155,7 +163,7 @@ class Profile extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.access_time,
-                          color: Color(0xffe54a43),
+                          color: Theme.of(context).accentColor,
                           size: 28,
                         ),
                         SizedBox(height: 4),
@@ -172,7 +180,7 @@ class Profile extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.get_app_outlined,
-                          color: Color(0xffe54a43),
+                          color: Theme.of(context).accentColor,
                           size: 28,
                         ),
                         SizedBox(height: 4),
@@ -190,7 +198,7 @@ class Profile extends StatelessWidget {
           SizedBox(height: 12),
           Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: cardBackgroundColor,
               borderRadius: BorderRadius.all(Radius.circular(4)),
             ),
             child: Padding(
@@ -201,7 +209,7 @@ class Profile extends StatelessWidget {
                   Text('再小的想法，都值得被记录'),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xffe54a43)),
+                      border: Border.all(color: Theme.of(context).accentColor),
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                     ),
                     child: Padding(
@@ -211,13 +219,13 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.add,
                             size: 16,
-                            color: Color(0xffe54a43),
+                            color: Theme.of(context).accentColor,
                           ),
                           Text(
                             '发布',
                             style: TextStyle(
                               fontSize: 12,
-                              color: Color(0xffe54a43),
+                              color: Theme.of(context).accentColor,
                             ),
                           ),
                         ],
@@ -231,7 +239,7 @@ class Profile extends StatelessWidget {
           SizedBox(height: 12),
           Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: cardBackgroundColor,
               borderRadius: BorderRadius.all(Radius.circular(4)),
             ),
             child: Padding(
@@ -258,6 +266,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.edit,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -274,6 +284,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.account_balance_wallet_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -290,6 +302,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.comment_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -306,6 +320,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.thumb_up_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -328,6 +344,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.brightness_2_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -344,6 +362,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.emoji_objects_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -360,6 +380,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.list_alt_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(
@@ -376,6 +398,8 @@ class Profile extends StatelessWidget {
                             Icon(
                               Icons.shopping_cart_outlined,
                               size: 28,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             SizedBox(height: 4),
                             Text(

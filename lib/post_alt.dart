@@ -88,27 +88,39 @@ class PostAlt extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(top: 8, left: 24, right: 24),
+              padding: EdgeInsets.only(top: 16, left: 24, right: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.share, size: 20),
+                      Icon(
+                        Icons.share,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('分享'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.comment_outlined, size: 20),
+                      Icon(
+                        Icons.comment_outlined,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('15'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.thumb_up_outlined, size: 20),
+                      Icon(
+                        Icons.thumb_up_outlined,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('80'),
                     ],

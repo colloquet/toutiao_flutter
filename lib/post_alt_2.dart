@@ -86,21 +86,33 @@ class PostAlt2 extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.share, size: 20),
+                      Icon(
+                        Icons.share,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('分享'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.comment_outlined, size: 20),
+                      Icon(
+                        Icons.comment_outlined,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('15'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.thumb_up_outlined, size: 20),
+                      Icon(
+                        Icons.thumb_up_outlined,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('80'),
                     ],

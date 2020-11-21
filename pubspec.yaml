@@ -48,6 +48,7 @@ flutter:
   assets:
     - assets/images/bytedance-logo.jpg
     - assets/images/feishu-logo.jpg
+    - assets/images/avatar.png
     - assets/images/1.png
     - assets/images/2.png
     - assets/images/3.png

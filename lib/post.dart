@@ -8,6 +8,11 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color borderColor =
+        MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Color(0xff212121)
+            : Color(0xffcccccc);
+
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () {
@@ -70,7 +75,7 @@ class Post extends StatelessWidget {
             SizedBox(height: 8),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xffcccccc), width: 0.1),
+                border: Border.all(color: borderColor, width: 0.5),
               ),
               child: Column(
                 children: [
@@ -125,12 +130,17 @@ class Post extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 16,
                               height: 1.5,
-                              color: Colors.black,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
                             ),
                             children: [
                               TextSpan(
                                 text: '#罗永浩papi酱庞博首次联名带货#',
-                                style: TextStyle(color: Color(0xff406599)),
+                                style: TextStyle(
+                                    color: Theme.of(context)
+                                        .textTheme
+                                        .button
+                                        .color),
                               ),
                               TextSpan(
                                   text:
@@ -201,21 +211,33 @@ class Post extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.share, size: 20),
+                      Icon(
+                        Icons.share,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('分享'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.comment_outlined, size: 20),
+                      Icon(
+                        Icons.comment_outlined,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('15'),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.thumb_up_outlined, size: 20),
+                      Icon(
+                        Icons.thumb_up_outlined,
+                        size: 20,
+                        color: Theme.of(context).textTheme.bodyText1.color,
+                      ),
                       SizedBox(width: 8),
                       Text('80'),
                     ],

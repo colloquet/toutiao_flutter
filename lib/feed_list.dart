@@ -16,10 +16,14 @@ class Feed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final postTypes = [Post(), PostAlt(), PostAlt2()];
+    Color dividerColor =
+        MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Colors.black
+            : Color(0xfff2f2f2);
 
     return ListView.separated(
       separatorBuilder: (BuildContext context, int index) =>
-          Container(height: 6.0, color: Color(0xfff2f2f2)),
+          Container(height: 6.0, color: dividerColor),
       itemCount: 100,
       itemBuilder: (BuildContext context, int index) {
         if (story && index == 0) {
