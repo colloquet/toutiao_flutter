@@ -11,36 +11,41 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        backgroundColor: Colors.white,
-        accentColor: Color(0xffe54a43),
-        textTheme: TextTheme(
-          button: TextStyle(color: Color(0xff406599)),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus.unfocus();
+      },
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.red,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          backgroundColor: Colors.white,
+          accentColor: Color(0xffe54a43),
+          textTheme: TextTheme(
+            button: TextStyle(color: Color(0xff406599)),
+          ),
         ),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.red,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          backgroundColor: Color(0xff121212),
+          accentColor: Color(0xfffe5f5f),
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Color(0xffaeaeae)),
+            bodyText2: TextStyle(color: Color(0xffaeaeae)),
+            button: TextStyle(color: Color(0xff3778de)),
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Color(0xff141414),
+          ),
+        ),
+        themeMode: ThemeMode.system,
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage(),
       ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        backgroundColor: Color(0xff121212),
-        accentColor: Color(0xfffe5f5f),
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: Color(0xffaeaeae)),
-          bodyText2: TextStyle(color: Color(0xffaeaeae)),
-          button: TextStyle(color: Color(0xff3778de)),
-        ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Color(0xff141414),
-        ),
-      ),
-      themeMode: ThemeMode.system,
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
     );
   }
 }
@@ -137,13 +142,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 actions: [
                   Padding(
                     padding: const EdgeInsets.only(right: 16.0),
-                    child: Icon(Icons.mail_outline,
-                        color: Theme.of(context).textTheme.bodyText1.color),
+                    child: Icon(
+                      Icons.mail_outline,
+                      color: Theme.of(context).textTheme.bodyText1.color,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 16.0),
-                    child: Icon(Icons.settings_outlined,
-                        color: Theme.of(context).textTheme.bodyText1.color),
+                    child: Icon(
+                      Icons.settings_outlined,
+                      color: Theme.of(context).textTheme.bodyText1.color,
+                    ),
                   ),
                 ],
                 backgroundColor: profileAppBarColor,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toutiao_flutter/profile_button.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
@@ -123,73 +124,25 @@ class Profile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.notifications_outlined,
-                          color: Theme.of(context).accentColor,
-                          size: 28,
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          '消息通知',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
+                  ProfileButton(
+                    accented: true,
+                    icon: Icons.notifications_outlined,
+                    title: '消息通知',
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.star_outline,
-                          color: Theme.of(context).accentColor,
-                          size: 28,
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          '收藏',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
+                  ProfileButton(
+                    accented: true,
+                    icon: Icons.star_outline,
+                    title: '收藏',
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.access_time,
-                          color: Theme.of(context).accentColor,
-                          size: 28,
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          '浏览历史',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
+                  ProfileButton(
+                    accented: true,
+                    icon: Icons.access_time,
+                    title: '浏览历史',
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.get_app_outlined,
-                          color: Theme.of(context).accentColor,
-                          size: 28,
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          '下载管理',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
+                  ProfileButton(
+                    accented: true,
+                    icon: Icons.get_app_outlined,
+                    title: '下载管理',
                   ),
                 ],
               ),
@@ -259,77 +212,21 @@ class Profile extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.edit,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '用户反馈',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.edit,
+                        title: '用户反馈',
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.account_balance_wallet_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '钱包',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.account_balance_wallet_outlined,
+                        title: '钱包',
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.comment_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '评论',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.comment_outlined,
+                        title: '评论',
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.thumb_up_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '点赞',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.thumb_up_outlined,
+                        title: '点赞',
                       ),
                     ],
                   ),
@@ -337,77 +234,21 @@ class Profile extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.brightness_2_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '深色模式',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.brightness_2_outlined,
+                        title: '深色模式',
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.emoji_objects_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '创作中心',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.emoji_objects_outlined,
+                        title: '创作中心',
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.list_alt_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '订单',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.list_alt_outlined,
+                        title: '订单',
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.shopping_cart_outlined,
-                              size: 28,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
-                            ),
-                            SizedBox(height: 4),
-                            Text(
-                              '购物车',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                          ],
-                        ),
+                      ProfileButton(
+                        icon: Icons.shopping_cart_outlined,
+                        title: '购物车',
                       ),
                     ],
                   ),

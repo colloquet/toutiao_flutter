@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:toutiao_flutter/post_actions.dart';
 import 'package:toutiao_flutter/post_detail.dart';
+import 'package:toutiao_flutter/post_meta.dart';
 
 class PostAlt extends StatelessWidget {
-  const PostAlt({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,44 +19,7 @@ class PostAlt extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: [
-                Container(
-                  height: 36,
-                  width: 36,
-                  decoration: BoxDecoration(
-                    color: Color(0xfff5f5f5),
-                    borderRadius: BorderRadius.all(Radius.circular(18)),
-                    border: Border.all(color: Color(0xffeeeeee)),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(18),
-                    child: Image.asset('assets/images/bytedance-logo.jpg'),
-                  ),
-                ),
-                SizedBox(width: 12),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '字节跳动',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '昨天 15:44 · 字节跳动官方账号',
-                      style: TextStyle(
-                        color: Color(0xffa1a1a1),
-                        fontWeight: FontWeight.w300,
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            PostMeta(),
             SizedBox(height: 4),
             Row(
               children: [
@@ -87,47 +48,7 @@ class PostAlt extends StatelessWidget {
                 )
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 16, left: 24, right: 24),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.share,
-                        size: 20,
-                        color: Theme.of(context).textTheme.bodyText1.color,
-                      ),
-                      SizedBox(width: 8),
-                      Text('分享'),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.comment_outlined,
-                        size: 20,
-                        color: Theme.of(context).textTheme.bodyText1.color,
-                      ),
-                      SizedBox(width: 8),
-                      Text('15'),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.thumb_up_outlined,
-                        size: 20,
-                        color: Theme.of(context).textTheme.bodyText1.color,
-                      ),
-                      SizedBox(width: 8),
-                      Text('80'),
-                    ],
-                  ),
-                ],
-              ),
-            )
+            PostActions(),
           ],
         ),
       ),
