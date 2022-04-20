@@ -7,7 +7,7 @@ import 'package:toutiao_flutter/post_meta_alt.dart';
 
 class Post extends StatelessWidget {
   const Post({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -60,14 +60,14 @@ class Post extends StatelessWidget {
                               fontSize: 16,
                               height: 1.5,
                               color:
-                                  Theme.of(context).textTheme.bodyText1.color,
+                                  Theme.of(context).textTheme.bodyText1!.color,
                             ),
                             children: [
                               TextSpan(
                                 text: '#罗永浩papi酱庞博首次联名带货#',
                                 style: TextStyle(
                                   color:
-                                      Theme.of(context).textTheme.button.color,
+                                      Theme.of(context).textTheme.button!.color,
                                 ),
                               ),
                               TextSpan(

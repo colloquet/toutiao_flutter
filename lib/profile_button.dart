@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class ProfileButton extends StatelessWidget {
   const ProfileButton({
-    Key key,
+    Key? key,
     this.accented = false,
-    @required this.icon,
-    @required this.title,
+    required this.icon,
+    required this.title,
   }) : super(key: key);
 
   final bool accented;
@@ -22,7 +22,7 @@ class ProfileButton extends StatelessWidget {
             size: 28,
             color: accented
                 ? Theme.of(context).accentColor
-                : Theme.of(context).textTheme.bodyText1.color,
+                : Theme.of(context).textTheme.bodyText1!.color,
           ),
           SizedBox(height: 4),
           Text(

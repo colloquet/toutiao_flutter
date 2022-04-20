@@ -7,7 +7,7 @@ import 'package:toutiao_flutter/story_list.dart';
 
 class Feed extends StatelessWidget {
   const Feed({
-    Key key,
+    Key? key,
     this.story = false,
   }) : super(key: key);
 

@@ -13,7 +13,7 @@ class PostActions extends StatelessWidget {
               Icon(
                 Icons.share,
                 size: 20,
-                color: Theme.of(context).textTheme.bodyText1.color,
+                color: Theme.of(context).textTheme.bodyText1!.color,
               ),
               SizedBox(width: 8),
               Text('分享'),
@@ -24,7 +24,7 @@ class PostActions extends StatelessWidget {
               Icon(
                 Icons.comment_outlined,
                 size: 20,
-                color: Theme.of(context).textTheme.bodyText1.color,
+                color: Theme.of(context).textTheme.bodyText1!.color,
               ),
               SizedBox(width: 8),
               Text('15'),
@@ -35,7 +35,7 @@ class PostActions extends StatelessWidget {
               Icon(
                 Icons.thumb_up_outlined,
                 size: 20,
-                color: Theme.of(context).textTheme.bodyText1.color,
+                color: Theme.of(context).textTheme.bodyText1!.color,
               ),
               SizedBox(width: 8),
               Text('80'),

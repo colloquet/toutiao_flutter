@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class StoryList extends StatelessWidget {
   const StoryList({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

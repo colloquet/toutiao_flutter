@@ -10,15 +10,15 @@ class PostDetail extends StatefulWidget {
 }
 
 class _PostDetailState extends State<PostDetail> {
-  ScrollController _controller;
+  ScrollController? _controller;
   bool _showHeader = false;
 
   @override
   void initState() {
     super.initState();
     _controller = ScrollController();
-    _controller.addListener(() {
-      if (_controller.offset >= 50) {
+    _controller!.addListener(() {
+      if (_controller!.offset >= 50) {
         setState(() {
           _showHeader = true;
         });
@@ -56,19 +56,19 @@ class _PostDetailState extends State<PostDetail> {
         iconTheme: IconThemeData(
           color: Theme.of(context)
               .textTheme
-              .bodyText1
+              .bodyText1!
               .color, //change your color here
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Icon(Icons.search,
-                color: Theme.of(context).textTheme.bodyText1.color),
+                color: Theme.of(context).textTheme.bodyText1!.color),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Icon(Icons.more_horiz,
-                color: Theme.of(context).textTheme.bodyText1.color),
+                color: Theme.of(context).textTheme.bodyText1!.color),
           ),
         ],
         title: AnimatedOpacity(
@@ -98,13 +98,13 @@ class _PostDetailState extends State<PostDetail> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).textTheme.bodyText1.color,
+                      color: Theme.of(context).textTheme.bodyText1!.color,
                     ),
                   ),
                   Text(
                     '197 万粉丝',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyText1.color,
+                      color: Theme.of(context).textTheme.bodyText1!.color,
                       fontWeight: FontWeight.w300,
                       fontSize: 12,
                     ),
@@ -164,7 +164,7 @@ class _PostDetailState extends State<PostDetail> {
                                         height: 1.5,
                                         color: Theme.of(context)
                                             .textTheme
-                                            .bodyText1
+                                            .bodyText1!
                                             .color,
                                       ),
                                       children: [
@@ -339,7 +339,7 @@ class _PostDetailState extends State<PostDetail> {
                           Icon(
                             Icons.edit,
                             size: 20,
-                            color: Theme.of(context).textTheme.bodyText1.color,
+                            color: Theme.of(context).textTheme.bodyText1!.color,
                           ),
                           SizedBox(width: 8),
                           Text(
@@ -361,7 +361,7 @@ class _PostDetailState extends State<PostDetail> {
                             Icon(
                               Icons.comment_outlined,
                               color:
-                                  Theme.of(context).textTheme.bodyText1.color,
+                                  Theme.of(context).textTheme.bodyText1!.color,
                             ),
                             Positioned(
                               top: 0,
@@ -386,21 +386,21 @@ class _PostDetailState extends State<PostDetail> {
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.star_outline,
-                          color: Theme.of(context).textTheme.bodyText1.color,
+                          color: Theme.of(context).textTheme.bodyText1!.color,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.thumb_up_outlined,
-                          color: Theme.of(context).textTheme.bodyText1.color,
+                          color: Theme.of(context).textTheme.bodyText1!.color,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.share,
-                          color: Theme.of(context).textTheme.bodyText1.color,
+                          color: Theme.of(context).textTheme.bodyText1!.color,
                         ),
                       ),
                     ],

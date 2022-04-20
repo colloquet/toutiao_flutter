@@ -3,7 +3,7 @@ import 'package:toutiao_flutter/profile_button.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

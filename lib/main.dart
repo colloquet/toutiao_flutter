@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        FocusManager.instance.primaryFocus.unfocus();
+        FocusManager.instance.primaryFocus!.unfocus();
       },
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -137,21 +137,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         : Brightness.light,
                 leading: Icon(
                   Icons.qr_code_outlined,
-                  color: Theme.of(context).textTheme.bodyText1.color,
+                  color: Theme.of(context).textTheme.bodyText1!.color,
                 ),
                 actions: [
                   Padding(
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Icon(
                       Icons.mail_outline,
-                      color: Theme.of(context).textTheme.bodyText1.color,
+                      color: Theme.of(context).textTheme.bodyText1!.color,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 16.0),
                     child: Icon(
                       Icons.settings_outlined,
-                      color: Theme.of(context).textTheme.bodyText1.color,
+                      color: Theme.of(context).textTheme.bodyText1!.color,
                     ),
                   ),
                 ],

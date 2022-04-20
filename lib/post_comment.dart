@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class PostComment extends StatelessWidget {
   const PostComment({
-    Key key,
-    @required this.comment,
+    Key? key,
+    required this.comment,
   }) : super(key: key);
 
   final String comment;
@@ -45,7 +45,7 @@ class PostComment extends StatelessWidget {
                   Icon(
                     Icons.thumb_up_outlined,
                     size: 16,
-                    color: Theme.of(context).textTheme.bodyText1.color,
+                    color: Theme.of(context).textTheme.bodyText1!.color,
                   )
                 ],
               ),
@@ -77,7 +77,7 @@ class PostComment extends StatelessWidget {
                 ),
                 Spacer(),
                 Icon(Icons.clear,
-                    color: Theme.of(context).textTheme.bodyText1.color,
+                    color: Theme.of(context).textTheme.bodyText1!.color,
                     size: 18),
               ],
             ),
