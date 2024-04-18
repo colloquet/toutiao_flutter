@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:toutiao_flutter/post_comment.dart';
 import 'package:toutiao_flutter/post_gallery.dart';
 import 'package:toutiao_flutter/post_meta.dart';
@@ -47,9 +48,11 @@ class _PostDetailState extends State<PostDetail> {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        brightness: MediaQuery.of(context).platformBrightness == Brightness.dark
-            ? Brightness.dark
-            : Brightness.light,
+        systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness:
+                MediaQuery.of(context).platformBrightness == Brightness.dark
+                    ? Brightness.dark
+                    : Brightness.light),
         backgroundColor: Theme.of(context).backgroundColor,
         elevation: 0,
         titleSpacing: 0,

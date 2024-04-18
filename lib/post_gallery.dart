@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class PostGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.width - 32 - 2,
+    return AspectRatio(
+      aspectRatio: 1,
       child: IgnorePointer(
         child: GridView.count(
           primary: false,

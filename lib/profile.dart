@@ -162,7 +162,8 @@ class Profile extends StatelessWidget {
                   Text('再小的想法，都值得被记录'),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Theme.of(context).accentColor),
+                      border: Border.all(
+                          color: Theme.of(context).colorScheme.secondary),
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                     ),
                     child: Padding(
@@ -172,13 +173,13 @@ class Profile extends StatelessWidget {
                           Icon(
                             Icons.add,
                             size: 16,
-                            color: Theme.of(context).accentColor,
+                            color: Theme.of(context).colorScheme.secondary,
                           ),
                           Text(
                             '发布',
                             style: TextStyle(
                               fontSize: 12,
-                              color: Theme.of(context).accentColor,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                         ],

@@ -21,7 +21,7 @@ class ProfileButton extends StatelessWidget {
             icon,
             size: 28,
             color: accented
-                ? Theme.of(context).accentColor
+                ? Theme.of(context).colorScheme.secondary
                 : Theme.of(context).textTheme.bodyText1!.color,
           ),
           SizedBox(height: 4),
