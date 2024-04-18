@@ -45,7 +45,7 @@ class PostComment extends StatelessWidget {
                   Icon(
                     Icons.thumb_up_outlined,
                     size: 16,
-                    color: Theme.of(context).textTheme.bodyText1!.color,
+                    color: Theme.of(context).textTheme.bodyLarge!.color,
                   )
                 ],
               ),
@@ -77,7 +77,7 @@ class PostComment extends StatelessWidget {
                 ),
                 Spacer(),
                 Icon(Icons.clear,
-                    color: Theme.of(context).textTheme.bodyText1!.color,
+                    color: Theme.of(context).textTheme.bodyLarge!.color,
                     size: 18),
               ],
             ),

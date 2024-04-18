@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.red,
             visualDensity: VisualDensity.adaptivePlatformDensity,
             textTheme: TextTheme(
-              button: TextStyle(color: Color(0xff406599)),
+              labelLarge: TextStyle(color: Color(0xff406599)),
             ),
             colorScheme: ColorScheme.light(
               background: Colors.white,
@@ -68,9 +68,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.red,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: TextTheme(
-            bodyText1: TextStyle(color: Color(0xffaeaeae)),
-            bodyText2: TextStyle(color: Color(0xffaeaeae)),
-            button: TextStyle(color: Color(0xff3778de)),
+            bodyLarge: TextStyle(color: Color(0xffaeaeae)),
+            bodyMedium: TextStyle(color: Color(0xffaeaeae)),
+            labelLarge: TextStyle(color: Color(0xff3778de)),
           ),
           colorScheme: ColorScheme.dark(
             background: Color(0xff121212),
@@ -180,21 +180,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                 : Brightness.light),
                     leading: Icon(
                       Icons.qr_code_outlined,
-                      color: Theme.of(context).textTheme.bodyText1!.color,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
                     ),
                     actions: [
                       Padding(
                         padding: const EdgeInsets.only(right: 16.0),
                         child: Icon(
                           Icons.mail_outline,
-                          color: Theme.of(context).textTheme.bodyText1!.color,
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 16.0),
                         child: Icon(
                           Icons.settings_outlined,
-                          color: Theme.of(context).textTheme.bodyText1!.color,
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
                         ),
                       ),
                     ],

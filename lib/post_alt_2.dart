@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:toutiao_flutter/post_actions.dart';
 import 'package:toutiao_flutter/post_detail.dart';
 import 'package:toutiao_flutter/post_meta.dart';
@@ -29,14 +30,15 @@ class PostAlt2 extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            Container(
-              width: MediaQuery.of(context).size.width - 32 - 2,
-              height: (MediaQuery.of(context).size.width - 32 - 2) * 0.5625,
-              decoration: BoxDecoration(
-                color: Color(0xfff5f5f5),
-                image: DecorationImage(
-                  image: AssetImage("assets/images/4.png"),
-                  fit: BoxFit.cover,
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Color(0xfff5f5f5),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/4.png"),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

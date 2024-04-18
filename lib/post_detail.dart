@@ -46,32 +46,32 @@ class _PostDetailState extends State<PostDetail> {
             ? Color(0xff282828)
             : Color(0xfff2f2f2);
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness:
                 MediaQuery.of(context).platformBrightness == Brightness.dark
                     ? Brightness.dark
                     : Brightness.light),
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         elevation: 0,
         titleSpacing: 0,
         iconTheme: IconThemeData(
           color: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .color, //change your color here
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Icon(Icons.search,
-                color: Theme.of(context).textTheme.bodyText1!.color),
+                color: Theme.of(context).textTheme.bodyLarge!.color),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Icon(Icons.more_horiz,
-                color: Theme.of(context).textTheme.bodyText1!.color),
+                color: Theme.of(context).textTheme.bodyLarge!.color),
           ),
         ],
         title: AnimatedOpacity(
@@ -101,13 +101,13 @@ class _PostDetailState extends State<PostDetail> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).textTheme.bodyText1!.color,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
                     ),
                   ),
                   Text(
                     '197 万粉丝',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyText1!.color,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
                       fontWeight: FontWeight.w300,
                       fontSize: 12,
                     ),
@@ -167,7 +167,7 @@ class _PostDetailState extends State<PostDetail> {
                                         height: 1.5,
                                         color: Theme.of(context)
                                             .textTheme
-                                            .bodyText1!
+                                            .bodyLarge!
                                             .color,
                                       ),
                                       children: [
@@ -325,7 +325,7 @@ class _PostDetailState extends State<PostDetail> {
                 left: 16,
               ),
               decoration: BoxDecoration(
-                color: Theme.of(context).backgroundColor,
+                color: Theme.of(context).colorScheme.background,
                 border: Border(top: BorderSide(color: borderColor, width: 0.5)),
               ),
               child: Row(
@@ -342,7 +342,7 @@ class _PostDetailState extends State<PostDetail> {
                           Icon(
                             Icons.edit,
                             size: 20,
-                            color: Theme.of(context).textTheme.bodyText1!.color,
+                            color: Theme.of(context).textTheme.bodyLarge!.color,
                           ),
                           SizedBox(width: 8),
                           Text(
@@ -364,7 +364,7 @@ class _PostDetailState extends State<PostDetail> {
                             Icon(
                               Icons.comment_outlined,
                               color:
-                                  Theme.of(context).textTheme.bodyText1!.color,
+                                  Theme.of(context).textTheme.bodyLarge!.color,
                             ),
                             Positioned(
                               top: 0,
@@ -389,21 +389,21 @@ class _PostDetailState extends State<PostDetail> {
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.star_outline,
-                          color: Theme.of(context).textTheme.bodyText1!.color,
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.thumb_up_outlined,
-                          color: Theme.of(context).textTheme.bodyText1!.color,
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Icon(
                           Icons.share,
-                          color: Theme.of(context).textTheme.bodyText1!.color,
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
                         ),
                       ),
                     ],

@@ -60,14 +60,16 @@ class Post extends StatelessWidget {
                               fontSize: 16,
                               height: 1.5,
                               color:
-                                  Theme.of(context).textTheme.bodyText1!.color,
+                                  Theme.of(context).textTheme.bodyLarge!.color,
                             ),
                             children: [
                               TextSpan(
                                 text: '#罗永浩papi酱庞博首次联名带货#',
                                 style: TextStyle(
-                                  color:
-                                      Theme.of(context).textTheme.button!.color,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .labelLarge!
+                                      .color,
                                 ),
                               ),
                               TextSpan(
